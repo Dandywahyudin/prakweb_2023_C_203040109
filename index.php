@@ -14,20 +14,19 @@ $buku = query("SELECT * FROM buku");
   <body>
   <nav class="navbar navbar-expand-lg bg-danger">
   <div class="container">
-    <a class="navbar-brand" href="#">Bookstore</a>
+    <a class="navbar-brand text-light" href="#" ><h3>Bookstore</h3></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Tambah Buku</a>
+          <a class="nav-link active text-light " aria-current="page" href="tambah.php" ><h5>Tambah Buku</h5></a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
     <div class="container">
         <div class="row mt-3">
             <div class="col">
@@ -47,8 +46,8 @@ $buku = query("SELECT * FROM buku");
                         <span class="position-absolute top-0 end-0 bg-dark text-white px-2 py-1 opacity-75"><small><?= $b['kategori']?></small></span>
                         <h5 class="card-title"><?= $b['judul']?></h5>
                         <p class="card-text"><?= $b['penulis']?> | <?= $b['penerbit']?></p>
-                        <a href="" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="ubah.php?id=<?= $b['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="hapus.php?id=<?= $b['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda ingin menghapus data?')">Delete</a>
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                     </div>
                     </div>
